@@ -4,7 +4,7 @@
 
     <groupId>stni.maven.plugins</groupId>
     <artifactId>atlassian-maven-plugin</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2-SNAPSHOT</version>
     <packaging>maven-plugin</packaging>
 
     <name>${project.artifactId}</name>
@@ -104,7 +104,7 @@
         <connection>scm:git:https://github.com/nidi3/atlassian-maven-plugin.git</connection>
         <developerConnection>scm:git:https://github.com/nidi3/atlassian-maven-plugin.git</developerConnection>
         <url>https://github.com/nidi3/atlassian-maven-plugin</url>
-      <tag>atlassian-maven-plugin-1.0.1</tag>
+      <tag>HEAD</tag>
   </scm>
 
     <distributionManagement>
