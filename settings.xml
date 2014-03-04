@@ -5,7 +5,7 @@
 
     <profiles>
         <profile>
-            <id>default</id>
+            <id>nidi</id>
             <repositories>
                 <repository>
                     <id>nidi</id>
@@ -22,7 +22,7 @@
     </profiles>
 
     <activeProfiles>
-        <activeProfile>default</activeProfile>
+        <activeProfile>nidi</activeProfile>
     </activeProfiles>
 
 </settings>
