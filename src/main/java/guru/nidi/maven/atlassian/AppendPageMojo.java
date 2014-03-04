@@ -1,40 +1,38 @@
-package stni.maven.plugins;
+package guru.nidi.maven.atlassian;
 
 import com.atlassian.confluence.rpc.soap.beans.RemotePage;
 import com.atlassian.confluence.rpc.soap.beans.RemotePageUpdateOptions;
+import guru.nidi.atlassian.remote.confluence.ConfluenceService;
+import guru.nidi.atlassian.remote.confluence.DefaultConfluenceService;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
-import stni.atlassian.remote.confluence.ConfluenceService;
-import stni.atlassian.remote.confluence.ConfluenceTasks;
-import stni.atlassian.remote.confluence.DefaultConfluenceService;
 
 /**
- * @goal addPage
+ * @goal appendPage
  */
-public class AddPageMojo extends AbstractAddMojo {
+public class AppendPageMojo extends AbstractAddMojo {
     /**
-     * @parameter expression="${title}"
+     * @parameter expression="${pageId}"
      * @required
      */
-    protected String title;
+    protected long pageId;
 
     /**
-     * @parameter expression="${parentId}"
-     * @required
+     * @parameter expression="${appendTop}"
      */
-    protected long parentId;
+    protected boolean appendTop = false;
+
 
     public void execute() throws MojoExecutionException, MojoFailureException {
         try {
             ConfluenceService service = new DefaultConfluenceService(atlassianUrl, atlassianUsername, atlassianPassword);
-            ConfluenceTasks tasks = new ConfluenceTasks(service);
-            RemotePage page = tasks.getOrCreatePage(parentId, evaluate(title));
+            RemotePage page = service.getPage(pageId);
             if (contentFile != null) {
-                content += readFile(contentFile);
+                content = appendTop ? (readFile(contentFile) + content) : (content + readFile(contentFile));
             }
-            page.setContent(evaluate(content));
+            page.setContent(page.getContent() + evaluate(content));
             service.updatePage(page, new RemotePageUpdateOptions());
-            getLog().info("Updated/created page '" + title + "'");
+            getLog().info("Updated/created page '" + page.getTitle() + "'");
             addLabels(service, page.getId());
         } catch (Exception e) {
             if (failOnError) {

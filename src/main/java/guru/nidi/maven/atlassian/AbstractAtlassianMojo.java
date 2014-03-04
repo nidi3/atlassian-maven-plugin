@@ -1,4 +1,4 @@
-package stni.maven.plugins;
+package guru.nidi.maven.atlassian;
 
 import org.apache.maven.plugin.AbstractMojo;
 

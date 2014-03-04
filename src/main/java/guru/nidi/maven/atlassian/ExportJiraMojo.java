@@ -1,9 +1,9 @@
-package stni.maven.plugins;
+package guru.nidi.maven.atlassian;
 
+import guru.nidi.atlassian.remote.meta.JiraGenerateRequest;
+import guru.nidi.atlassian.remote.meta.client.JiraExportClient;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
-import stni.atlassian.remote.meta.JiraGenerateRequest;
-import stni.atlassian.remote.meta.client.JiraExportClient;
 
 import java.io.*;
 import java.util.Map;

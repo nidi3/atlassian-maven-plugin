@@ -1,4 +1,4 @@
-package stni.maven.plugins;
+package guru.nidi.maven.atlassian;
 
 import java.util.Collection;
 import java.util.Map;

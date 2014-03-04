@@ -1,12 +1,12 @@
-package stni.maven.plugins;
+package guru.nidi.maven.atlassian;
 
 import com.atlassian.jira.rpc.soap.beans.RemoteProject;
 import com.atlassian.jira.rpc.soap.beans.RemoteVersion;
+import guru.nidi.atlassian.remote.jira.DefaultJiraService;
+import guru.nidi.atlassian.remote.jira.JiraService;
+import guru.nidi.atlassian.remote.jira.JiraTasks;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
-import stni.atlassian.remote.jira.DefaultJiraService;
-import stni.atlassian.remote.jira.JiraService;
-import stni.atlassian.remote.jira.JiraTasks;
 
 import java.io.File;
 import java.io.FileOutputStream;

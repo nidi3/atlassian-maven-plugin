@@ -1,11 +1,11 @@
-package stni.maven.plugins;
+package guru.nidi.maven.atlassian;
 
 import com.atlassian.confluence.rpc.soap.beans.RemoteAttachment;
 import com.atlassian.confluence.rpc.soap.beans.RemoteUser;
+import guru.nidi.atlassian.remote.confluence.ConfluenceService;
+import guru.nidi.atlassian.remote.confluence.DefaultConfluenceService;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
-import stni.atlassian.remote.confluence.ConfluenceService;
-import stni.atlassian.remote.confluence.DefaultConfluenceService;
 
 import java.io.File;
 import java.io.FileInputStream;

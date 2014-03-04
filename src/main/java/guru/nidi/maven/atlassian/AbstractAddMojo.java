@@ -1,10 +1,10 @@
-package stni.maven.plugins;
+package guru.nidi.maven.atlassian;
 
+import guru.nidi.atlassian.remote.confluence.ConfluenceService;
 import org.apache.maven.project.MavenProject;
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.VelocityEngine;
 import org.apache.velocity.tools.generic.DateTool;
-import stni.atlassian.remote.confluence.ConfluenceService;
 
 import java.io.*;
 import java.util.HashMap;
