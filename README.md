@@ -1,4 +1,4 @@
-atlassian-maven-plugin
+atlassian-maven-plugin [![Build Status](https://travis-ci.org/nidi3/atlassian-maven-plugin.png?branch=master)](https://travis-ci.org/nidi3/atlassian-maven-plugin)
 ======================
 
 A maven plugin to do different task in atlassian tools. These goals are available:
