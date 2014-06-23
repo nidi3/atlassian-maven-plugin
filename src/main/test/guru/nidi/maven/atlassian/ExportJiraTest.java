@@ -17,10 +17,10 @@ public class ExportJiraTest {
     public void simple() throws MojoFailureException, MojoExecutionException {
         final ExportJiraMojo mojo = new ExportJiraMojo();
         mojo.request = request();
-        mojo.exportServerUrl = "https://exports.mimacom.com";
+        mojo.exportServerUrl = System.getenv("EXPORTS_URL");
         mojo.atlassianPassword = System.getenv("JIRA_PASS");
         mojo.atlassianUsername = System.getenv("JIRA_USER");
-        mojo.atlassianUrl = "https://jira.mimacom.com";
+        mojo.atlassianUrl = System.getenv("JIRA_URL");
         mojo.exportFile = new File("output.pdf");
         mojo.execute();
     }
