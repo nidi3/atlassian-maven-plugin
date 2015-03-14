@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>guru.nidi</groupId>
+        <artifactId>guru-nidi-parent-pom</artifactId>
+        <version>1.0.0</version>
+    </parent>
 
     <groupId>guru.nidi.maven.plugins</groupId>
     <artifactId>atlassian-maven-plugin</artifactId>
@@ -9,44 +16,15 @@
 
     <name>${project.artifactId}</name>
 
-    <description />
+    <description>Perform some actions on Jira, Confluence from maven.</description>
 
-    <build>
-        <plugins>
-            <plugin>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.3.2</version>
-                <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
-                </configuration>
-            </plugin>
-            <plugin>
-                <artifactId>maven-release-plugin</artifactId>
-                <version>2.4.1</version>
-                <configuration>
-                    <checkModificationExcludeList>workspace.xml</checkModificationExcludeList>
-                </configuration>
-            </plugin>
-            <plugin>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.9</version>
-            </plugin>
-        </plugins>
-        <extensions>
-            <extension>
-                <groupId>org.apache.maven.wagon</groupId>
-                <artifactId>wagon-webdav-jackrabbit</artifactId>
-                <version>2.2</version>
-            </extension>
-        </extensions>
-    </build>
+    <build></build>
 
     <dependencies>
         <dependency>
             <groupId>guru.nidi.atlassian.remote</groupId>
             <artifactId>simple-remote-atlassian</artifactId>
-            <version>1.0.3-SNAPSHOT</version>
+            <version>1.0.3</version>
         </dependency>
         <dependency>
             <groupId>javax.mail</groupId>
@@ -86,23 +64,18 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.6.6</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>jcl-over-slf4j</artifactId>
-            <version>1.6.6</version>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>1.0.7</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.11</version>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 
@@ -110,20 +83,6 @@
         <connection>scm:git:https://github.com/nidi3/atlassian-maven-plugin.git</connection>
         <developerConnection>scm:git:https://github.com/nidi3/atlassian-maven-plugin.git</developerConnection>
         <url>https://github.com/nidi3/atlassian-maven-plugin</url>
-      <tag>HEAD</tag>
-  </scm>
-
-    <distributionManagement>
-        <repository>
-            <id>internal.repo</id>
-            <name>Internal Repository</name>
-            <url>${internal.repo.path}/releases</url>
-        </repository>
-        <snapshotRepository>
-            <id>internal.repo</id>
-            <name>Internal Repository</name>
-            <url>${internal.repo.path}/snapshots</url>
-        </snapshotRepository>
-    </distributionManagement>
+    </scm>
 
 </project>
